@@ -1,0 +1,6 @@
+﻿namespace ChapterFirst
+{
+    class Company
+    {
+    }
+}
