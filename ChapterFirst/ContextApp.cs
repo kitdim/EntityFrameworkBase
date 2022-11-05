@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ChapterFirst
 {
     class ContextApp : DbContext
     {
         public DbSet<Phone> Phones { get; set; }
+        public DbSet<Company> Сompanies { get; set; }
 
         public ContextApp()
         {
@@ -15,15 +15,6 @@ namespace ChapterFirst
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server = (localdb)\\MSSQLLocalDB;Database = TestDb;Trusted_Connection = true");
-        }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Ignore<Company>();
-        //}
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Table>();
-            //modelBuilder.Ignore<Company>();
         }
     }
 }
